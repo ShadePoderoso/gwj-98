@@ -1,0 +1,143 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8qjrbxy48tpk"]
+
+[ext_resource type="Script" uid="uid://deqjmngyoamr0" path="res://Scenes/main.gd" id="1_6bp64"]
+[ext_resource type="Texture2D" uid="uid://dwr2ecmkpwslm" path="res://Assets/Prototype/binding_post_red.svg" id="1_21xkr"]
+[ext_resource type="PackedScene" uid="uid://cxpqlst3ldypm" path="res://Scenes/signal_gen.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://r88dp07tygk4" path="res://Assets/Prototype/binding_post_black.svg" id="2_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dpuxibfw4mtgy" path="res://Scenes/pin_socket.tscn" id="3_344ge"]
+[ext_resource type="PackedScene" uid="uid://cuua7bj6gh7ow" path="res://Scenes/speaker.tscn" id="6_6bp64"]
+[ext_resource type="Texture2D" uid="uid://byw8rg65tfxv8" path="res://Assets/Prototype/breadboard_dip16.svg" id="7_344ge"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bp64")
+
+[node name="DeskBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4691621, 0.79883325, 0.42134303, 1)
+
+[node name="MainLayout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRack" type="HBoxContainer" parent="MainLayout"]
+layout_mode = 2
+
+[node name="PowerSupply" type="PanelContainer" parent="MainLayout/TopRack"]
+layout_mode = 2
+
+[node name="PostContainer" type="HBoxContainer" parent="MainLayout/TopRack/PowerSupply"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="RedPost" type="TextureRect" parent="MainLayout/TopRack/PowerSupply/PostContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_21xkr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PinSocket" parent="MainLayout/TopRack/PowerSupply/PostContainer/RedPost" instance=ExtResource("3_344ge")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+socket_id = "PWR_5V"
+
+[node name="BlackPost" type="TextureRect" parent="MainLayout/TopRack/PowerSupply/PostContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_6bp64")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PinSocket" parent="MainLayout/TopRack/PowerSupply/PostContainer/BlackPost" instance=ExtResource("3_344ge")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+socket_id = "GND"
+
+[node name="SignalGen" parent="MainLayout/TopRack" instance=ExtResource("1_jjgbg")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speaker" parent="MainLayout/TopRack" instance=ExtResource("6_6bp64")]
+layout_mode = 2
+
+[node name="DeskArea" type="Control" parent="MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BreadBoard" type="TextureRect" parent="MainLayout/DeskArea"]
+custom_minimum_size = Vector2(540, 360)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 278.0
+offset_top = -288.0
+offset_right = 778.0
+offset_bottom = -28.0
+grow_vertical = 0
+texture = ExtResource("7_344ge")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="PinSocket" parent="MainLayout/DeskArea/BreadBoard" instance=ExtResource("3_344ge")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 75.0
+offset_right = 120.0
+offset_bottom = 95.0
+socket_id = "PIN_1"
+
+[node name="PinSocket2" parent="MainLayout/DeskArea/BreadBoard" instance=ExtResource("3_344ge")]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 103.0
+offset_right = 119.0
+offset_bottom = 123.0
+socket_id = "PIN_8"
+
+[node name="PinSocket3" parent="MainLayout/DeskArea/BreadBoard" instance=ExtResource("3_344ge")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 128.0
+offset_right = 120.0
+offset_bottom = 148.0
+socket_id = "PIN_3"
+
+[node name="PinSocket4" parent="MainLayout/DeskArea/BreadBoard" instance=ExtResource("3_344ge")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 155.0
+offset_right = 120.0
+offset_bottom = 175.0
+
+[node name="WiresLayer" type="Control" parent="."]
+anchors_preset = 0

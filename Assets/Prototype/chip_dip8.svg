@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 180" width="140" height="180">
+<rect x="6" y="29" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="14" cy="35" r="2.5" fill="#5a6068"/>
+<rect x="6" y="64" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="14" cy="70" r="2.5" fill="#5a6068"/>
+<rect x="6" y="99" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="14" cy="105" r="2.5" fill="#5a6068"/>
+<rect x="6" y="134" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="14" cy="140" r="2.5" fill="#5a6068"/>
+<rect x="112" y="29" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="126" cy="35" r="2.5" fill="#5a6068"/>
+<rect x="112" y="64" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="126" cy="70" r="2.5" fill="#5a6068"/>
+<rect x="112" y="99" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="126" cy="105" r="2.5" fill="#5a6068"/>
+<rect x="112" y="134" width="22" height="12" rx="2" fill="#d0d5dc" stroke="#8a9098" stroke-width="1.5"/>
+<circle cx="126" cy="140" r="2.5" fill="#5a6068"/>
+<rect x="24" y="12" width="92" height="156" rx="6" fill="#222428" stroke="#111214" stroke-width="2"/>
+<rect x="26" y="14" width="88" height="152" rx="5" fill="none" stroke="#383c44" stroke-width="1.5"/>
+<path d="M 60 12 A 10 10 0 0 0 80 12 Z" fill="#161719" stroke="#383c44" stroke-width="1"/>
+<circle cx="38" cy="35" r="4.5" fill="#161719" stroke="#383c44" stroke-width="1"/>
+<text x="70" y="85" font-family="monospace" font-size="12" font-weight="bold" fill="#8a9098" text-anchor="middle" letter-spacing="1">GWJ-98</text>
+<text x="70" y="102" font-family="monospace" font-size="10" fill="#626870" text-anchor="middle">IC-SOUND-01</text>
+<text x="38" y="38" font-family="monospace" font-size="8" fill="#4a5058">1</text>
+<text x="102" y="38" font-family="monospace" font-size="8" fill="#4a5058">8</text>
+<text x="38" y="73" font-family="monospace" font-size="8" fill="#4a5058">2</text>
+<text x="102" y="73" font-family="monospace" font-size="8" fill="#4a5058">7</text>
+<text x="38" y="108" font-family="monospace" font-size="8" fill="#4a5058">3</text>
+<text x="102" y="108" font-family="monospace" font-size="8" fill="#4a5058">6</text>
+<text x="38" y="143" font-family="monospace" font-size="8" fill="#4a5058">4</text>
+<text x="102" y="143" font-family="monospace" font-size="8" fill="#4a5058">5</text>
+</svg>

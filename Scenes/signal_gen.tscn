@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxpqlst3ldypm"]
+
+[ext_resource type="Script" uid="uid://dok3de22xop2c" path="res://Scenes/signal_gen.gd" id="1_4ktev"]
+[ext_resource type="Script" uid="uid://douaj4ajeqvg3" path="res://Scenes/panel_container.gd" id="2_jmqyi"]
+[ext_resource type="Texture2D" uid="uid://cjhc5c8um176t" path="res://Assets/Prototype/oscilloscope_bezel.svg" id="3_jmqyi"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_4ktev"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_jmqyi"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_p1xly"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_4ktev"]
+buffer_length = 0.1
+
+[node name="SignalGen" type="Control"]
+custom_minimum_size = Vector2(400, 260)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4ktev")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_jmqyi")
+
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("3_jmqyi")
+expand_mode = 1
+
+[node name="Line2D" type="Line2D" parent="VBoxContainer/PanelContainer"]
+width = 2.0
+default_color = Color(0, 1, 0.4, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SineButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4ktev")
+text = "Sine"
+
+[node name="SquareButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_jmqyi")
+text = "Square"
+
+[node name="TriangleButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_p1xly")
+text = "Triangle"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_4ktev")
+volume_db = -75.606

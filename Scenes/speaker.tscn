@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuua7bj6gh7ow"]
+
+[ext_resource type="Texture2D" uid="uid://7k0jc54q58ia" path="res://Assets/Prototype/speaker_grille.svg" id="1_mrwrk"]
+[ext_resource type="Script" uid="uid://b24k5n5qk0mfq" path="res://Scenes/speaker.gd" id="1_wx2ik"]
+[ext_resource type="PackedScene" uid="uid://dpuxibfw4mtgy" path="res://Scenes/pin_socket.tscn" id="2_5i5xf"]
+[ext_resource type="Texture2D" uid="uid://br3g8y6vd5gu0" path="res://Assets/Prototype/binding_post_green.svg" id="2_wx2ik"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_hsdro"]
+buffer_length = 0.1
+
+[node name="Speaker" type="PanelContainer"]
+custom_minimum_size = Vector2(140, 200)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wx2ik")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MONITOR"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_mrwrk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PostContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AudioPost" type="TextureRect" parent="VBoxContainer/PostContainer"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+texture = ExtResource("2_wx2ik")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PinSocket" parent="VBoxContainer/PostContainer/AudioPost" instance=ExtResource("2_5i5xf")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+socket_id = "SPK_IN"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_hsdro")

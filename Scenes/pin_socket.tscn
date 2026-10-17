@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpuxibfw4mtgy"]
+
+[ext_resource type="Script" uid="uid://bpl1kcwrjehni" path="res://Scenes/pin_socket.gd" id="1_yx5ux"]
+
+[node name="PinSocket" type="Control"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yx5ux")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
